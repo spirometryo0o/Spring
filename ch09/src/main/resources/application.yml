@@ -1,0 +1,30 @@
+logging:
+    file:
+        name: /logs/ch09.log
+    level:
+        root: info
+server:
+    servlet:
+        context-path: /ch09
+spring:
+    application:
+        name: ch09
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: 1234
+        url: jdbc:mysql://localhost:3306/studydb
+        username: spirometryo0o
+    jpa:
+        database: mysql
+        hibernate:
+            ddl-auto: update
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        properties:
+            hibernate:
+                format_sql: true
+                show_sql: true
+#JWT 설정
+jwt:
+    issuer: spirometryo0o@gmail.com
+    secret: 5f138b6602481e2d108920866db16a40

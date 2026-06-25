@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 속성은 해당 매퍼파일을 연결할 매퍼클래스(DAO) 설정(패키지포함) -->
+<mapper namespace="org.example.ch04.dao.User1DAO">
+
+    <!-- id값은 DAO의 메서드명으로 맞춰줌 -->
+    <select id="select">
+        SELECT * FROM User1 WHERE userid=#{userid};
+    </select>
+
+    <!-- 반환 결과가 List<User1DTO> 이지만 List의 제네릭타입을 resultType으로 선언 -->
+    <select id="selectAll">
+        SELECT * FROM User1;
+    </select>
+
+    <insert id="insert">
+        INSERT INTO User1 SET
+        userid=#{userid},
+        name=#{name},
+        hp=#{hp},
+        age=#{age};
+    </insert>
+
+    <update id="update">
+        UPDATE User1 SET
+        name=#{name},
+        hp=#{hp},
+        age=#{age}
+        WHERE
+        userid=#{userid};
+    </update>
+
+    <delete id="delete">
+        DELETE FROM User1 WHERE userid=#{userid};
+    </delete>
+</mapper>
